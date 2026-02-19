@@ -13,8 +13,9 @@ export function UISpeakerProvider() {
   const speakerRef = useRef<UISpeaker | null>(null);
 
   useEffect(() => {
+    const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
     const speaker = new UISpeaker({
-      cdnBase: "/sounds",
+      cdnBase: `${basePath}/sounds`,
       volume: 0.5,
     });
     speaker.init();
