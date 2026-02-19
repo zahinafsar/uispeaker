@@ -15,7 +15,7 @@ export function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <aside className="w-full shrink-0 md:w-56 lg:w-64">
+    <aside className="hidden shrink-0 md:block md:w-56 lg:w-64">
       <div className="sticky top-14 max-h-[calc(100vh-3.5rem)] overflow-y-auto py-6 pr-4 md:py-8">
         <nav className="space-y-6">
           {/* Documentation section */}

@@ -1,4 +1,9 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import { codeToHtml } from "shiki";
 import { CopyButton } from "../copy-button";
+import { useTheme } from "../theme-provider";
 
 const SCRIPT_TAG_CODE = `<!-- Add the script tag -->
 <script src="https://unpkg.com/uispeaker"></script>
@@ -23,6 +28,39 @@ speaker.init();
 speaker.play('success');
 speaker.volume(0.5);
 speaker.mute();`;
+
+function HighlightedPre({
+  code,
+  language,
+}: {
+  code: string;
+  language: string;
+}) {
+  const { resolvedTheme } = useTheme();
+  const [html, setHtml] = useState("");
+
+  useEffect(() => {
+    const theme = resolvedTheme === "dark" ? "github-dark" : "github-light";
+    codeToHtml(code, { lang: language, theme })
+      .then(setHtml)
+      .catch(() => setHtml(""));
+  }, [code, language, resolvedTheme]);
+
+  if (html) {
+    return (
+      <div
+        className="overflow-x-auto [&>pre]:!bg-transparent [&>pre]:p-4 [&>pre]:m-0 [&>pre>code]:font-mono [&>pre>code]:text-xs [&>pre>code]:leading-relaxed"
+        dangerouslySetInnerHTML={{ __html: html }}
+      />
+    );
+  }
+
+  return (
+    <pre className="overflow-x-auto p-4 font-mono text-xs leading-relaxed text-muted-foreground">
+      <code>{code}</code>
+    </pre>
+  );
+}
 
 export function QuickStartSection() {
   return (
@@ -53,9 +91,7 @@ export function QuickStartSection() {
               </div>
               <CopyButton text={SCRIPT_TAG_CODE} />
             </div>
-            <pre className="overflow-x-auto p-4 font-mono text-xs leading-relaxed text-muted-foreground">
-              <code>{SCRIPT_TAG_CODE}</code>
-            </pre>
+            <HighlightedPre code={SCRIPT_TAG_CODE} language="html" />
           </div>
 
           {/* ES Module */}
@@ -73,9 +109,7 @@ export function QuickStartSection() {
               </div>
               <CopyButton text={ESM_CODE} />
             </div>
-            <pre className="overflow-x-auto p-4 font-mono text-xs leading-relaxed text-muted-foreground">
-              <code>{ESM_CODE}</code>
-            </pre>
+            <HighlightedPre code={ESM_CODE} language="javascript" />
           </div>
         </div>
 
