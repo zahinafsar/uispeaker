@@ -1,0 +1,123 @@
+{
+  "version": "1.0.0",
+  "description": "UISpeaker built-in sound registry. Maps sound names to files and metadata.",
+  "sounds": {
+    "click": {
+      "file": "click.mp3",
+      "defaultEvent": "click",
+      "category": "click",
+      "description": "Short digital click for buttons and links",
+      "duration": 0.5,
+      "source": "mixkit.co (ID 2568)",
+      "license": "Mixkit Free License"
+    },
+    "tap": {
+      "file": "tap.mp3",
+      "defaultEvent": "click",
+      "category": "click",
+      "description": "Soft tap for toggles and checkboxes",
+      "duration": 2.5,
+      "source": "mixkit.co (ID 2569)",
+      "license": "Mixkit Free License"
+    },
+    "pop": {
+      "file": "pop.mp3",
+      "defaultEvent": "click",
+      "category": "click",
+      "description": "Bubble pop for playful interactions",
+      "duration": 2.2,
+      "source": "mixkit.co (ID 2577)",
+      "license": "Mixkit Free License"
+    },
+    "keystroke": {
+      "file": "keystroke.mp3",
+      "defaultEvent": "input",
+      "category": "input",
+      "description": "Single key press for text input feedback",
+      "duration": 0.9,
+      "source": "mixkit.co (ID 2358)",
+      "license": "Mixkit Free License"
+    },
+    "typewriter": {
+      "file": "typewriter.mp3",
+      "defaultEvent": "input",
+      "category": "input",
+      "description": "Mechanical typewriter key for vintage feel",
+      "duration": 0.5,
+      "source": "mixkit.co (ID 2073)",
+      "license": "Mixkit Free License"
+    },
+    "hover": {
+      "file": "hover.mp3",
+      "defaultEvent": "hover",
+      "category": "hover",
+      "description": "Subtle swoosh for hover interactions",
+      "duration": 1.1,
+      "source": "mixkit.co (ID 3101)",
+      "license": "Mixkit Free License"
+    },
+    "swoosh": {
+      "file": "swoosh.mp3",
+      "defaultEvent": "hover",
+      "category": "hover",
+      "description": "Pronounced swoosh for emphasis on hover",
+      "duration": 2.6,
+      "source": "mixkit.co (ID 2575)",
+      "license": "Mixkit Free License"
+    },
+    "slide": {
+      "file": "slide.mp3",
+      "defaultEvent": "mousemove",
+      "category": "mousemove",
+      "description": "Smooth slide for continuous mouse movement",
+      "duration": 1.0,
+      "source": "mixkit.co (ID 2519)",
+      "license": "Mixkit Free License"
+    },
+    "open": {
+      "file": "open.mp3",
+      "defaultEvent": "open",
+      "category": "toggle",
+      "description": "Opening tone for dropdowns, dialogs, and popups",
+      "duration": 2.0,
+      "source": "mixkit.co (ID 3100)",
+      "license": "Mixkit Free License"
+    },
+    "close": {
+      "file": "close.mp3",
+      "defaultEvent": "close",
+      "category": "toggle",
+      "description": "Closing tone for dismissing UI elements",
+      "duration": 1.1,
+      "source": "mixkit.co (ID 2520)",
+      "license": "Mixkit Free License"
+    },
+    "success": {
+      "file": "success.mp3",
+      "defaultEvent": "success",
+      "category": "notification",
+      "description": "Positive chime for success notifications",
+      "duration": 2.7,
+      "source": "mixkit.co (ID 2867)",
+      "license": "Mixkit Free License"
+    },
+    "error": {
+      "file": "error.mp3",
+      "defaultEvent": "error",
+      "category": "notification",
+      "description": "Alert tone for error notifications",
+      "duration": 2.7,
+      "source": "mixkit.co (ID 2866)",
+      "license": "Mixkit Free License"
+    },
+    "warning": {
+      "file": "warning.mp3",
+      "defaultEvent": "warning",
+      "category": "notification",
+      "description": "Cautionary beep for warning notifications",
+      "duration": 0.8,
+      "source": "mixkit.co (ID 1513)",
+      "license": "Mixkit Free License"
+    }
+  }
+}
