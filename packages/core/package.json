@@ -1,0 +1,36 @@
+{
+  "name": "uispeaker",
+  "version": "0.1.0",
+  "description": "Add interactive sounds to UI elements via data attributes",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "lint": "tsc --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "devDependencies": {
+    "tsup": "^8",
+    "typescript": "^5"
+  },
+  "keywords": [
+    "ui",
+    "sound",
+    "audio",
+    "data-attributes",
+    "web-components"
+  ],
+  "license": "MIT"
+}

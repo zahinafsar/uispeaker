@@ -1,26 +1,18 @@
 {
-  "name": "uispeaker",
+  "name": "uispeaker-monorepo",
   "version": "0.1.0",
   "private": true,
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint"
-  },
-  "dependencies": {
-    "next": "16.1.4",
-    "react": "19.2.3",
-    "react-dom": "19.2.3"
-  },
-  "devDependencies": {
-    "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "16.1.4",
-    "tailwindcss": "^4",
-    "typescript": "^5"
+    "dev": "npm run dev --workspace=apps/docs",
+    "dev:core": "npm run dev --workspace=packages/core",
+    "build": "npm run build --workspaces",
+    "build:core": "npm run build --workspace=packages/core",
+    "build:docs": "npm run build --workspace=apps/docs",
+    "lint": "npm run lint --workspaces",
+    "clean": "npm run clean --workspaces --if-present"
   }
 }
