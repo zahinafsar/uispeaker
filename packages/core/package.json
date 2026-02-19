@@ -5,21 +5,31 @@
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
+  "unpkg": "dist/uispeaker.global.js",
+  "jsdelivr": "dist/uispeaker.global.js",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.mjs",
       "require": "./dist/index.js"
+    },
+    "./global": {
+      "default": "./dist/uispeaker.global.js"
     }
   },
   "files": [
-    "dist"
+    "dist",
+    "README.md"
+  ],
+  "sideEffects": [
+    "dist/uispeaker.global.js"
   ],
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
     "lint": "tsc --noEmit",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist",
+    "size": "gzip -c dist/uispeaker.global.js | wc -c"
   },
   "devDependencies": {
     "tsup": "^8",
@@ -30,7 +40,20 @@
     "sound",
     "audio",
     "data-attributes",
-    "web-components"
+    "interactive",
+    "web-audio",
+    "feedback",
+    "ux"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zahinafsar/uispeaker.git",
+    "directory": "packages/core"
+  },
+  "homepage": "https://github.com/zahinafsar/uispeaker#readme",
+  "bugs": {
+    "url": "https://github.com/zahinafsar/uispeaker/issues"
+  },
+  "author": "Zahin Afsar"
 }
